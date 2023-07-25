@@ -104,6 +104,20 @@ produto [] = 1
 produto (x:xs) = x * (produto xs)
 
 --q11
+
+allEqual :: [Int] -> Int -> Int
+allEqual [] _= 0
+allEqual xs e = length [k | k <- xs, k == e]
+
 unique :: [Int] -> [Int]
 unique [] = []
-unique x:xs 
+unique xs = [l | l <- xs, (allEqual xs l) == 1]
+
+
+--q12
+isAsc :: [Int] -> Bool
+isAsc [] = True
+isAsc [_] = True
+isAsc (x: y : ys)
+    | x <= y = isAsc(y:ys)
+    |otherwise = False
