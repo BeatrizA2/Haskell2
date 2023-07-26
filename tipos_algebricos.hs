@@ -88,3 +88,8 @@ foldTree func x (Node n tl tr) = func n (foldTree func x tl) (foldTree func x tr
 
 
 --h
+sumt :: Int -> Int -> Int -> Int
+sumt x y z = x + y + z
+
+treeSum :: Tree Int -> Int
+treeSum tree = foldTree sumt 0 tree
