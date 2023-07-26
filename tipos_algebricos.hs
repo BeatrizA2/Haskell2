@@ -93,3 +93,9 @@ sumt x y z = x + y + z
 
 treeSum :: Tree Int -> Int
 treeSum tree = foldTree sumt 0 tree
+
+
+--OBS função para gerar letras maiúscula
+capitalize :: Char -> Char
+capitalize ch = chr (ord ch + offset)
+    where offset = ord 'A' - ord 'a'
