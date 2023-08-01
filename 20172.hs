@@ -6,7 +6,6 @@ aux f g (x:xs) counter
     | otherwise = (g x) : aux f g xs (counter + 1)
 
 altMap :: (a -> b) -> (a -> b) -> [a] -> [b]
-altMap f g [] = []
 altMap f g xs = aux f g xs 0
 
 
